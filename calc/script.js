@@ -11,11 +11,11 @@ function mul(a, b) {
 }
 
 function div(a, b) {
-  return a/b;
+  return a / b;
 }
 
 function intDiv(a, b) {
-  var res = a/b;
+  var res = a / b;
   return res < 0 ? Math.ceil(res) : Math.floor(res);
 }
 

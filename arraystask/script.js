@@ -1,7 +1,3 @@
-function isArray1(a) {
-  return Array.isArray(a);
-}
-
 function isArray2(a) {
   return a instanceof Array;
 }
@@ -10,14 +6,19 @@ function isArray3(a) {
   return Object.prototype.toString.call(a) == '[object Array]';
 }
 
-function range(a, b) {
+function range(a, b, step) {
   var result = [];
-  if ("undefined" == typeof b) {
+  if (!b) {
     b = a;
     a = 0;
   }
-  for (var i = a; i < b; i++) {
-    result.push(i);
+  if (!step) {
+    step = 1;
+  }
+  var n = Math.ceil((b - a) / step);
+  for (var i = 0; i < n ; i++) {
+    result.push(a);
+    a += step;
   }
   return result;
 }
@@ -29,7 +30,7 @@ function compact1(a) {
 function compact2(a) {
   var truthy = [];
   for (var i = 0; i < a.length; i++) {
-    if (Boolean(a[i])) {
+    if (a[i]) {
       truthy.push(a[i]);
     }
   }
@@ -52,10 +53,10 @@ function sum2(a) {
 }
 
 function unique(a) {
-  var uni = function(value, index, self) {
+  var filterCb = function(value, index, self) {
     return self.indexOf(value) === index;
   }
-  return a.filter(uni);
+  return a.filter(filterCb);
 }
 
 function last(a) {
@@ -66,15 +67,11 @@ function excludeLast(a, b) {
   if ("undefined" == typeof b) {
     b = 1;
   }
-  for (var i = 0; i < b; i++) {
-    a.pop();
-  }
-  return a;
+  return a.slice(0, a.length - b);
 }
 
 var arr = [1, 2, 3, 4, 5];
-var falsy = ["", 2, false, NaN, "string", 0, null, undefined, 9];
-console.log(isArray1(arr));
+var falsy = ["", 2, false, NaN, "string", 0, null, undefined, 9, "0", "false"];
 console.log(isArray2(arr));
 console.log(isArray3(arr));
 console.log(range(5));
@@ -87,3 +84,18 @@ console.log(unique([1, 2, 2, 3, 4, 4, 5]));
 console.log(last(arr));
 console.log(excludeLast(arr, 2));
 console.log(excludeLast(arr));
+
+console.log("RANGE TEST");
+console.log(range(10));
+console.log(range(1, 10));
+console.log(range(1, 10, 3));
+console.log(range(10, null, 3));
+console.log(range(10, null)); 
+console.log(range(-2, -5));
+console.log(range(-5, -2));
+console.log(range(-5, -2, 2));
+console.log(range(-5, -2, -2));
+console.log(range(-5, null, 2));
+console.log(range(-5, null, -2));
+console.log(range(-10, -20, -5));
+console.log(range(-20, -10, -5));

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Html semantic tags</title>
+  <style>
+    main, nav, header, footer {
+      width: 70%;
+      margin: auto;
+    }
+    header, nav, footer{
+      text-align: center;
+    }
+    aside {
+      width: 20%;
+      float: right;
+    }
+    article {
+      width: 75%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Html semantic tags</h1>
+    <p>What are Semantic Elements?</p>
+  </header>
+  <nav>
+    <a href="#1">Link 1</a> |
+    <a href="#2">Link 2</a> |
+    <a href="#3">Link 3</a> |
+    <a href="#4">Link 4</a>
+  </nav>
+  <main>
+    <aside>
+      <h4>Aside element</h4>
+      <p>This element defines some content aside from the content it is placed in (like a sidebar).</p>
+    </aside>
+    <article>
+      <h1>Semantic Elements</h1>
+      <p>Semantics is the study of the meanings of words and phrases in a language.</p>
+      <p>Semantic elements = elements with a meaning.</p>
+      <section>
+        <h3>New Semantic Elements in HTML5</h3>
+        <p>
+          Many web sites contain HTML code like:
+          &lt;div id="nav"&gt; &lt;div class="header"&gt; &lt;div id="footer"&gt;
+          <br>
+          to indicate navigation, header, and footer.
+          <br>
+          HTML5 offers new semantic elements to define different parts of a web page.
+        </p>
+      </section>
+      <section>
+        <h3>Browser support</h3>
+        <p>
+          HTML5 semantic elements are supported in all modern browsers.
+          <br>
+          In addition, you can "teach" older browsers how to handle "unknown elements".
+          <details open="true">
+            <summary>Photo</summary>
+            <figure>
+              <img src="nonthing.png" alt="fake">
+              <figcaption>
+                Description of a photo and using <time datetime="2010-10-10 10:10">time</time> element.
+              </figcaption>
+            </figure>
+          </details>
+        </p>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <p>Hosted with GitHub Pages.</p>
+    <p>Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
+  </footer>
+</body>
+</html>

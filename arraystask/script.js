@@ -64,7 +64,7 @@ function last(a) {
 }
 
 function excludeLast(a, b) {
-  if ("undefined" == typeof b) {
+  if (b === undefined) {
     b = 1;
   }
   return a.slice(0, a.length - b);

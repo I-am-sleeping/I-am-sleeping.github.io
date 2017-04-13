@@ -1,4 +1,7 @@
 function binarySearch(arr, number) {
+  if (arr.length == 0) {
+    return -1;
+  }
   if (arr.length == 1) {
     if (arr[0] == number) {
       return 0;
@@ -30,3 +33,4 @@ console.log(binarySearch(a, 3));
 console.log(binarySearch(a, 15));
 console.log(binarySearch([1], 15));
 console.log(binarySearch([1], -15));
+console.log(binarySearch([], 10));
